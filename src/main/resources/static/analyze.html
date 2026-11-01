@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Market Lens — clear, educational analysis of stock and cryptocurrency charts.">
+  <meta name="theme-color" content="#f4f1e9">
+  <title>Market Lens — Chart Analysis</title>
+  <link rel="icon" href="market-lens-mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="analyze-page">
+  <div class="shell">
+    <main class="main">
+      <header class="topbar">
+        <div class="brand" aria-label="Market Lens"><img src="market-lens-mark.svg" alt="" width="38" height="38"><span>Market Lens<small>CHART ANALYSIS</small></span></div>
+        <a class="back-home" href="index.html">← <span>Home</span></a>
+      </header>
+      <div class="content">
+        <section class="intro">
+          <div>
+            <div class="eyebrow"><span class="eyebrow-line"></span> TECHNICAL CHART REVIEW</div>
+            <h1>See the story<br>in the <i>chart.</i></h1>
+            <p>Choose an asset, add a chart screenshot, and get a clear breakdown of the signals.</p>
+          </div>
+        </section>
+        <div class="disclaimer"><span class="info">i</span><span>For educational use only. Market analysis can be uncertain and is not financial advice.</span></div>
+        <section class="work-grid" id="analyze">
+          <div class="form-card">
+            <div class="card-heading"><div class="step">01 <span>/ 02</span></div><div><h2>Chart details</h2><p>Match the asset and timeframe to your screenshot.</p></div></div>
+            <label class="field-label" for="asset">ASSET</label>
+            <select id="asset" class="field" required><option value="">Loading assets…</option></select>
+            <label class="field-label" for="timeframe">TIMEFRAME</label>
+            <select id="timeframe" class="field"><option value="15m">15 minutes</option><option value="30m">30 minutes</option><option value="1h">1 hour</option><option value="4h">4 hours</option><option value="1d" selected>1 day</option><option value="1w">1 week</option></select>
+            <div class="upload-label"><span class="field-label">CHART SCREENSHOT</span><span class="file-limit">PNG / JPG <span>·</span> 5 MB MAX</span></div>
+            <div id="drop-zone" class="drop-zone">
+              <input type="file" id="chart-file" accept="image/png,image/jpeg" hidden>
+              <div id="upload-empty" class="upload-empty"><span class="upload-icon">↥</span><b>Drop chart image here</b><span>or <button type="button" id="browse" class="browse">browse files</button></span></div>
+              <div id="preview-wrap" class="preview-wrap" hidden><img id="preview" alt="Selected chart screenshot"><button type="button" id="remove-file" class="remove-file" aria-label="Remove image">×</button><span id="file-name"></span></div>
+            </div>
+            <button id="analyze-btn" class="analyze-btn" disabled><span class="sparkle">↗</span> Analyze chart</button>
+            <p class="privacy-note">Your screenshot is not saved by Market Lens.</p>
+          </div>
+          <section class="result-card" id="result" aria-live="polite">
+            <div class="empty-result">
+              <div class="result-kicker"><span>ANALYSIS</span><span>READY WHEN YOU ARE</span></div>
+              <div class="chart-illustration">
+                <div class="chart-caption">PRICE / TIME <span>—</span></div>
+                <svg viewBox="0 0 620 210" role="presentation" aria-hidden="true"><path class="chart-gridline" d="M0 35H620M0 85H620M0 135H620M0 185H620"/><path class="chart-baseline" d="M0 178H620"/><path class="chart-path" d="M0 151 C28 140 39 160 66 137 S105 147 128 112 S168 123 190 99 S225 110 251 86 S284 107 310 80 S347 92 368 62 S405 83 425 72 S457 101 482 60 S518 72 540 40 S574 63 590 30 S609 40 620 21"/><circle class="chart-point" cx="620" cy="21" r="5"/></svg>
+                <div class="chart-axis"><span>09:30</span><span>12:00</span><span>15:30</span></div>
+              </div>
+              <div class="empty-copy"><h2>Your chart,<br><i>in perspective.</i></h2><p>Your trend, key levels, and technical observations will appear here.</p></div>
+              <div class="result-steps"><span><i>01</i> Add chart</span><span><i>02</i> Set context</span><span><i>03</i> Review analysis</span></div>
+            </div>
+          </section>
+        </section>
+        <footer><span>MARKET LENS</span><span>EDUCATIONAL MARKET ANALYSIS</span></footer>
+      </div>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
